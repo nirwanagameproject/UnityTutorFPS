@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 15
-  damage: 20
+  damage: 25
   arrow_prefab: {fileID: 8757259361103457152, guid: 44aa2328b9c694222abd38a7cfa7ddaa, type: 3}
   spear_prefab: {fileID: 7165491135938379874, guid: 14bf1d96145bb4da89a0c47387f9523d, type: 3}
   arrow_Bow_StartPosition: {fileID: 2005804074}
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ada55e6d7f5b465e9bb6434bed222e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   is_Player: 1
   is_Boar: 0
   is_Cannibal: 0

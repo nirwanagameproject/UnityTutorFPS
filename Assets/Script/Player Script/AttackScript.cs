@@ -13,7 +13,10 @@ public class AttackScript : MonoBehaviour
     {
        Collider[] hits = Physics.OverlapSphere(transform.position, radius, layerMask);
        if(hits.Length > 0) {
-           print("we touched : " + hits[0].gameObject.tag);
+
+           //hit the damage
+           hits[0].gameObject.GetComponent<HealthScript>().ApplyDamage(damage);
+           print("Hit damage to  : " + hits[0].gameObject.tag);
            gameObject.SetActive(false);
        } 
     }
