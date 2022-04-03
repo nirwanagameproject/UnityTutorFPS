@@ -767,6 +767,7 @@ GameObject:
   - component: {fileID: 5099482626487076003}
   - component: {fileID: 5704025104895552970}
   - component: {fileID: 8727141763489592942}
+  - component: {fileID: 118109996}
   m_Layer: 9
   m_Name: Boar
   m_TagString: Enemy
@@ -878,6 +879,22 @@ MonoBehaviour:
   patrol_For_This_Time: 15
   wait_Before_Attack: 2
   attack_Point: {fileID: 3778106899678798239}
+--- !u!114 &118109996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530629515526743786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ada55e6d7f5b465e9bb6434bed222e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  is_Player: 0
+  is_Boar: 1
+  is_Cannibal: 0
 --- !u!1 &2530629515526743788
 GameObject:
   m_ObjectHideFlags: 0

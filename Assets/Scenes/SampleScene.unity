@@ -123,27 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 60f20ca05345247e48905747ebcd9d1a, type: 2}
---- !u!1 &118109995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2530629515526743786, guid: da83fca9ea9d040469ce698b658f0755, type: 3}
-  m_PrefabInstance: {fileID: 3579020064564659647}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &118109996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118109995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ada55e6d7f5b465e9bb6434bed222e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  is_Player: 0
-  is_Boar: 1
-  is_Cannibal: 0
 --- !u!1001 &301881605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,10 +421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1197969830093099743, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2433811213224244736, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -494,37 +469,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7176015001795924832, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 7176015001795924832, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
---- !u!1 &1894352384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2433811213224244736, guid: 9691b27e2af7242fcbb480353acb4e3f, type: 3}
-  m_PrefabInstance: {fileID: 1846780112}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1894352385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894352384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ada55e6d7f5b465e9bb6434bed222e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  is_Player: 1
-  is_Boar: 0
-  is_Cannibal: 0
 --- !u!1 &2077290853
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,10 +682,6 @@ PrefabInstance:
     - target: {fileID: 2530629515526743786, guid: da83fca9ea9d040469ce698b658f0755, type: 3}
       propertyPath: m_Name
       value: Boar
-      objectReference: {fileID: 0}
-    - target: {fileID: 2530629515526743786, guid: da83fca9ea9d040469ce698b658f0755, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da83fca9ea9d040469ce698b658f0755, type: 3}
