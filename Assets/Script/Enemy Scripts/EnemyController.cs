@@ -36,11 +36,14 @@ public class EnemyController : MonoBehaviour
 
     public GameObject attack_Point;
 
+    private EnemyAudio enemy_Audio;
+
     void Awake()
     {
         enemy_Anim = GetComponent<EnemyAnimator>();
         navAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag(Tags.PLAYER_TAG).transform;
+        enemy_Audio = GetComponentInChildren<EnemyAudio>();
     }
 
     // Start is called before the first frame update
@@ -88,6 +91,9 @@ public class EnemyController : MonoBehaviour
         if(Vector3.Distance(transform.position,target.position) <= chase_Distance){
             enemy_Anim.Walk(false);
             enemy_State = EnemyState.CHASE;
+
+            //sound
+            enemy_Audio.Play_ScreamSound(); 
 
         }
     }
@@ -142,6 +148,9 @@ public class EnemyController : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) > attack_Distance + chase_After_Attack_Distance){
             enemy_State = EnemyState.CHASE;
+
+            //sound
+            enemy_Audio.Play_AttackSound();
         }
     }
 
@@ -172,4 +181,6 @@ public class EnemyController : MonoBehaviour
     public EnemyState Enemy_State {
         get; set;
     }
+
+    
 }
