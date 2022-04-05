@@ -46,11 +46,13 @@
      <Compile Include="Assets\Script\Player Script\PlayerSprintAndCrouch.cs" />
      <Compile Include="Assets\Script\Weapon Script\ArrowBowScript.cs" />
      <Compile Include="Assets\Script\Player Script\PlayerAxeWooshSound.cs" />
+     <Compile Include="Assets\Script\Player Script\PlayerStats.cs" />
+     <Compile Include="Assets\Script\Enemy Scripts\EnemyAudio.cs" />
      <Compile Include="Assets\Script\Player Script\PlayerFootSteps.cs" />
      <Compile Include="Assets\Script\Player Script\PlayerAttack.cs" />
      <Compile Include="Assets\Script\Weapon Script\WeaponHandler.cs" />
      <Compile Include="Assets\Script\Enemy Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Script\Enemy Scripts\EnemyAudio.cs" />
+     <Compile Include="Assets\Script\Game Manager\EnemyManager.cs" />
      <None Include="Assets\Shaders\Standard\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Shaders\Standard\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Shaders\Standard\_DepthOfField\SeparableWeightedBlurDof34.shader" />

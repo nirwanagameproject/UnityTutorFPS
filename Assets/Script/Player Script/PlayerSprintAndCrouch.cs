@@ -25,10 +25,16 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     private float sprint_Step_Distance = 0.25f;
     private float crouch_Step_Distance = 0.5f;
 
+    private PlayerStats player_Stats;
+
+    private float sprint_Value = 100f;
+    public float sprint_Treshold = 10f;
+
    void Awake() {
        playerMovement = GetComponent<PlayerMovement>();
        look_Root = transform.GetChild(0);
        player_Footsteps = GetComponentInChildren<PlayerFootSteps>();
+       player_Stats = GetComponent<PlayerStats>();
    }
 
     void Start() {
@@ -45,11 +51,15 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     }
 
     void Sprint() {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !is_Crouching) {
-            playerMovement.speed = sprint_Speed;
-            player_Footsteps.step_Distance = sprint_Step_Distance;
-            player_Footsteps.volume_Min = sprint_Volume;
-            player_Footsteps.volume_Max = sprint_Volume;
+        
+        if(sprint_Value > 0) {
+            //feature handle if not running
+            if(Input.GetKeyDown(KeyCode.LeftShift) && !is_Crouching) {
+                playerMovement.speed = sprint_Speed;
+                player_Footsteps.step_Distance = sprint_Step_Distance;
+                player_Footsteps.volume_Min = sprint_Volume;
+                player_Footsteps.volume_Max = sprint_Volume;
+            }
         }
 
         if(Input.GetKeyUp (KeyCode.LeftShift) && !is_Crouching) {
@@ -58,6 +68,27 @@ public class PlayerSprintAndCrouch : MonoBehaviour
             player_Footsteps.volume_Min = walk_Volume_Min;
             player_Footsteps.volume_Max = walk_Volume_Max;
         } 
+
+        if(Input.GetKey(KeyCode.LeftShift) && !is_Crouching){
+            sprint_Value -= sprint_Treshold * Time.deltaTime; 
+
+            if(sprint_Value <= 0f){
+                sprint_Value = 0f;
+                playerMovement.speed = move_Speed;
+                player_Footsteps.step_Distance = walk_Step_Distance;
+                player_Footsteps.volume_Min = walk_Volume_Min;
+                player_Footsteps.volume_Max = walk_Volume_Max;
+                player_Stats.Display_StaminaStats(sprint_Value);
+            } 
+        } else {
+            if(sprint_Value != 100f) {
+                sprint_Value += (sprint_Treshold / 2f) * Time.deltaTime; 
+                player_Stats.Display_StaminaStats(sprint_Value);
+                if(sprint_Value > 100f) {
+                    sprint_Value = 100f;
+                }
+            }
+        }
     }
 
     void Crouch() {

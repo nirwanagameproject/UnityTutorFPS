@@ -15,6 +15,8 @@ public class HealthScript : MonoBehaviour
     private bool is_Dead;
 
     private EnemyAudio enemyAudio;
+
+    private PlayerStats player_Stats;
     
     void Awake()
     {
@@ -28,7 +30,7 @@ public class HealthScript : MonoBehaviour
         }
 
         if(is_Player){
-
+            player_Stats = GetComponent<PlayerStats>();
         }
     }
 
@@ -41,6 +43,7 @@ public class HealthScript : MonoBehaviour
 
         if(is_Player){
             //show health bar ui
+            player_Stats.Display_HealthStats(health);
         }
 
         if(is_Boar || is_Cannibal){
@@ -68,6 +71,7 @@ public class HealthScript : MonoBehaviour
             //coroutine
             StartCoroutine(DeadSound());
             //spawn more enemies
+            EnemyManager.instance.EnemyDied(true);
         }
 
         if(is_Boar){
@@ -80,6 +84,7 @@ public class HealthScript : MonoBehaviour
             //coroutine
             StartCoroutine(DeadSound());
             //spawn more enemies
+            EnemyManager.instance.EnemyDied(false);
         }
 
         if(is_Player){
@@ -89,6 +94,7 @@ public class HealthScript : MonoBehaviour
             }
 
             //stop spawn enemies
+            EnemyManager.instance.StopSpawning();
 
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;
